@@ -1,3 +1,5 @@
+package DijkstraAlgoritm;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -5,10 +7,10 @@ import java.util.Map;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
-class Graph {
-    private final Map<String, Vertex> graph; // mapping of vertex names to Vertex objects, built from a set of Edges
+public class Graph {
+    public final Map<String, Vertex> graph; // mapping of vertex names to Vertex objects, built from a set of Edges
 
-    /** One edge of the graph (only used by Graph constructor) */
+    /** One edge of the graph (only used by DijkstraAlgoritm.Graph constructor) */
     public static class Edge {
         public final String v1, v2;
         public final int dist;
@@ -16,15 +18,6 @@ class Graph {
             this.v1 = v1;
             this.v2 = v2;
             this.dist = dist;
-        }
-
-        @Override
-        public String toString() {
-            return "Edge{" +
-                    "v1='" + v1 + '\'' +
-                    ", v2='" + v2 + '\'' +
-                    ", dist=" + dist +
-                    '}';
         }
     }
 
@@ -48,12 +41,10 @@ class Graph {
             }
             else if (this.previous == null)
             {
-                System.out.print("FALSE, ");
                 fileWriter.append("FALSE, \n");
             }
             else
             {
-                System.out.print("TRUE, "+ this.dist);
                 fileWriter.append("TRUE, "+ this.dist+"\n");
             }
 
@@ -92,7 +83,7 @@ class Graph {
 
     public void dijkstra(String startName){
         if(!graph.containsKey(startName)){
-            System.err.printf("Graph doesn't contain start vertex \"%setPoints\"\n", startName);
+            System.err.printf("DijkstraAlgoritm.Graph doesn't contain start vertex \"%setPoints\"\n", startName);
             return;
         }
         final Vertex source = graph.get(startName);
@@ -111,7 +102,7 @@ class Graph {
     /** Runs dijkstra using a specified source vertex */
 //    public void dijkstra(String startName) {
 //        if (!graph.containsKey(startName)) {
-//            System.err.printf("Graph doesn't contain start vertex \"%setPoints\"\n", startName);
+//            System.err.printf("DijkstraAlgoritm.Graph doesn't contain start vertex \"%setPoints\"\n", startName);
 //            return;
 //        }
 //        final Vertex source = graph.get(startName);
@@ -153,7 +144,7 @@ class Graph {
     /** Prints a path from the source to the specified vertex */
     public void printPath(String endName) {
         if (!graph.containsKey(endName)) {
-            System.err.printf("Graph doesn't contain end vertex \"%setPoints\"\n", endName);
+            System.err.printf("DijkstraAlgoritm.Graph doesn't contain end vertex \"%setPoints\"\n", endName);
             return;
         }
 
