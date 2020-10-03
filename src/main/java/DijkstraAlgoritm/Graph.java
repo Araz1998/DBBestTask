@@ -99,24 +99,6 @@ public class Graph {
         dijkstra(q);
     }
 
-    /** Runs dijkstra using a specified source vertex */
-//    public void dijkstra(String startName) {
-//        if (!graph.containsKey(startName)) {
-//            System.err.printf("DijkstraAlgoritm.Graph doesn't contain start vertex \"%setPoints\"\n", startName);
-//            return;
-//        }
-//        final Vertex source = graph.get(startName);
-//        NavigableSet<Vertex> q = new TreeSet<>();
-//
-//        // set-up vertices
-//        for (Vertex v : graph.values()) {
-//            v.previous = v == source ? source : null;
-//            v.dist = v == source ? 0 : Integer.MAX_VALUE;
-//            q.add(v);
-//        }
-//
-//        dijkstra(q);
-//    }
 
     /** Implementation of dijkstra'setPoints algorithm using a binary heap. */
     private void dijkstra(final NavigableSet<Vertex> q) {
