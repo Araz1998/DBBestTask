@@ -26,10 +26,10 @@ public class Applicatiion {
         Graph.Edge[] graphMsss = pipelineDAO.GRAPH.toArray(new Graph.Edge[0]);
         Graph graph = new Graph(graphMsss);
 
-//        for (Pair<String, String> s : SetPointsDAO.pairs){
-//            graph.dijkstra(s.getKey());
-//            graph.printPath(s.getValue());
-//        }
+       for (Pair<String, String> s : SetPointsDAO.pairs){
+           graph.dijkstra(s.getKey());
+           graph.printPath(s.getValue());
+       }
         outputDAO.createTableInput();
         LOGGER.log(Level.INFO, "Successfully, end of works!");
     }
